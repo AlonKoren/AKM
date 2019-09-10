@@ -7,6 +7,7 @@ using System.Web.Http;
 using AKM.Dtos;
 using AKM.Models;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace AKM.Controllers.Api
 {
@@ -20,7 +21,10 @@ namespace AKM.Controllers.Api
         }
         public IHttpActionResult GetMovies()
         {
-            return Ok(_context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>));
+            return Ok(_context.Movies
+                .Include(m => m.Genre)
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>));
         }
 
         public IHttpActionResult GetMovie(int id)
