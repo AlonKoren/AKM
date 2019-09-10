@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AKM.ViewModels;
 
 namespace AKM.Controllers
 {
@@ -29,7 +30,7 @@ namespace AKM.Controllers
             {
                 MembershipTypes = membershipTypes
             };
-            return View("CustomerForm",viewModel);
+            return View("CustomerForm" ,viewModel);
         }
 
         [HttpPost]
@@ -46,6 +47,7 @@ namespace AKM.Controllers
                 customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
             }
             _context.SaveChanges();
+
             return RedirectToAction("Index", "Customers");
         }
 
@@ -67,9 +69,11 @@ namespace AKM.Controllers
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
             if (customer == null)
                 return HttpNotFound();
-            var viewModel =new CustomerFormViewModel
+
+            var viewModel = new CustomerFormViewModel
             {
                 Customer = customer,
                 MembershipTypes = _context.MembershipTypes.ToList()
