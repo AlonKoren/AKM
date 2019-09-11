@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
@@ -12,6 +13,12 @@ namespace AKM.Models
 {
     public class ApplicationUser : IdentityUser
     {
+
+        [Required]
+        [StringLength(255)]
+        public string DrivingLicense { get; set; }
+
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
