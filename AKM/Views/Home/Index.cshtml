@@ -1,6 +1,17 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<style>
+    .alona {
+        transition: background-color 0.5s ease;
+        background-color: transparent;
+    }
+
+        .alona:hover {
+            background-color: red;
+        }
+</style>
+
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=679847642501812&autoLogAppEvents=1"></script>
 <div style="text-align: center;">
@@ -11,24 +22,52 @@
 <div class="row">
     <section>
         <div class="col-md-4">
-            <h2>About Us</h2>
+            <canvas id="About Us" width="200" height="100">
+                <h2>About Us</h2>
+            </canvas>
             <p>
                 AKM is one of the most popular sites to rent movies online. It holds a great collection of movies and TV series that you can enjoy on your TV, PC or portable devices.
                 <br />To start with, you should create a AKM account. The site offers 4 account types: Pay as You Go, Monthly,Quarterly and Annual.
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Our location</h2>
+            <canvas id="Our location" width="200" height="100" >
+                <h2>Our location</h2>
+            </canvas>
+            
             <p>
                 Here is a Google map showing our office location
             </p>
-            <p><a class="btn btn-default" href="Home/Contact">Find us</a></p>
+            <p><a class="btn btn-default alona" href="Home/Contact">Find us</a></p>
         </div>
         <div class="col-md-4">
-            <h2>Like us</h2>
+            <canvas id="Like Us" width="200" height="100">
+                <h2>Like Us</h2>
+            </canvas>
+            
             <p>
                 <div class="fb-like" data-href="https://www.facebook.com/%D7%A8%D7%95%D7%A0%D7%99-%D7%A7%D7%95%D7%A8%D7%9F-%D7%94%D7%97%D7%96%D7%A8%D7%99-%D7%9E%D7%A1-1518832808394594/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
             </p>
         </div>
     </section>
 </div>
+
+@section scripts
+{
+    <script>
+        var c = document.getElementById("About Us");
+        var ctx = c.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.strokeText("About Us", 10, 50);
+
+        var c = document.getElementById("Our location");
+        var ctx = c.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.strokeText("Our location", 10, 50);
+
+        var c = document.getElementById("Like Us");
+        var ctx = c.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.strokeText("Like Us",10,50);
+    </script>
+}
