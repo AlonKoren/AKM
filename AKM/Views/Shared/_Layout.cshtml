@@ -3,19 +3,57 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - AKM</title>
+    <title>AKM - @ViewBag.Title </title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        @@font-face {
+            font-family: myFirstFont;
+            src: url(../../fonts/sansation_light.woff);
+        }
+
+        #borderVideo {
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 25px;
+        }
+    </style>
+
 </head>
 <body>
-    @Html.Partial("_NavBar")
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - AKM - The Best site to rent a movie</p>
-        </footer>
+<header>
+    <aside style="width: 40%;position: absolute; padding-left: .5rem; margin-left: .5rem; float: right; box-shadow: inset 5px 0 5px -5px #29627e; font-style: italic; color: #29627e;">
+        <div id="openweathermap-widget-17"></div>
+        <script>
+    window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = []; window.myWidgetParam.push({ id: 17, cityid: '293396', appid: '2d76d11295670093f8fbdfd03928d179', units: 'metric', containerid: 'openweathermap-widget-17', }); (function () {
+        var script = document.createElement('script'); script.async = true; script.charset = "utf-8"; script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();</script>
+    </aside>
+    <div style="width: 100%; border: 1px solid gray; padding: 100px; background: url(../../images/cinema-background.jpg); background-repeat: round;">
+        <h1 style="color: #F2385A; text-align: center; font-size: 100px; text-shadow: 2px 2px #FF0000;">
+            AKM
+        </h1>
+        <p style="font-size: 35px; text-align: center; color: white; font-family: cursive; margin-bottom: 100px;">
+            The Best site to rent a movie
+        </p>
     </div>
+</header>
+<nav>
+    @Html.Partial("_NavBar")
+</nav>
+<div class="container body-content">
+    @RenderBody()
+    <footer>
+        <hr />
+        <div style=" column-count: 1; font-family: myFirstFont;">
+            AKM is one of the most popular sites to rent movies online. It holds a great collection of movies and TV series that you can enjoy on your TV, PC or portable devices.
+            <br/>To start with, you should create a AKM account. The site offers 4 account types: Pay as You Go, Monthly,Quarterly and Annual.
+        </div>
+        <br />
+        <p>&copy; @DateTime.Now.Year - AKM - The Best site to rent a movie</p>
+    </footer>
+</div>
 
     @Scripts.Render("~/bundles/lib")
     @RenderSection("scripts", required: false)
