@@ -3423,7 +3423,7 @@ input[type="button"].btn-block {
   width: 100%;
 }
 .fade {
-  opacity: 0;
+  opacity: 1; /* ALON CANGE FROM 0 TO 1  */
   transition: opacity 0.15s linear;
 }
 .fade.in {

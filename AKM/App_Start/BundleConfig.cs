@@ -12,6 +12,7 @@ namespace AKM
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/bootbox.js",
+                        "~/Scripts/bootbox.locales.js",
                         "~/Scripts/respond.js",
                         "~/scripts/DataTables/jquery.dataTables.js",
                         "~/scripts/DataTables/dataTables.bootstrap.js",
