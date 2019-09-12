@@ -28,7 +28,8 @@ namespace AKM
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-lumen.css",
+                "~/Content/bootstrap-AKM.css",
                 "~/content/DataTables/css/dataTables.bootstrap.css",
                 "~/content/typeahead.css",
                 "~/content/toastr.css",
