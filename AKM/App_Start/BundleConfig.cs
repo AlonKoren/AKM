@@ -15,7 +15,8 @@ namespace AKM
                         "~/Scripts/respond.js",
                         "~/scripts/DataTables/jquery.dataTables.js",
                         "~/scripts/DataTables/dataTables.bootstrap.js",
-                        "~/scripts/typeahead.bundle.js"
+                        "~/scripts/typeahead.bundle.js",
+                        "~/scripts/toastr.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -30,6 +31,7 @@ namespace AKM
                 "~/Content/bootstrap.css",
                 "~/content/DataTables/css/dataTables.bootstrap.css",
                 "~/content/typeahead.css",
+                "~/content/toastr.css",
                 "~/Content/Site.css"));
         }
     }
